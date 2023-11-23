@@ -2,6 +2,7 @@ package task3;
 
 import java.time.LocalDate;
 import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 
 import static java.lang.StringTemplate.STR;
 
@@ -136,7 +137,9 @@ public class Chek extends BAZADANNYH{
         long res = 0;
         long skidka = 0;
         int counterForNumberProd = 1;
-
+        ZonedDateTime dateTime = ZonedDateTime.now();
+        DateTimeFormatter men2 = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        String nne = dateTime.format(men2);
         System.out.println("*-------------------------------------------------------------------------------------------------------------------*\n" +
                 "|                                   Адрес:\"Абсамат Масалиев\" Супер маркет:\"Ак-Ниет\" №5-Касса                         |");
         for (int i = 0; i < cheks.length; i++) {
@@ -150,8 +153,8 @@ public class Chek extends BAZADANNYH{
                    |  \{counterForNumberProd++})Название: \{cheks[i].getNameProduct()} | Описание: \{cheks[i].getBrandName()} |Цена: \{cheks[i].getOriginPrice()}  |  Шт:\{cheks[i].getShuk()} | Скидка: \{cheks[i].getPriceOOP()}сом |Сумма без скидки:\{cheks[i].getPriceCProsent()} Сумма : \{(cheks[i].getPriceBezProsent() - cheks[i].getPriceOOP())}сом  |\n """);
             }
         }
-        System.out.println("|                             Итог к оплате: " + res + "   | Oбщие скидки: " + skidka + " |  № чека:" + counter + "                               |");
-        System.out.println("|                               ***********   Спасибо за покупки!  *********                                       |");
+        System.out.println("|                    Итог к оплате: " + res + "   | Oбщие скидки: " + skidka + " |  № чека:" + counter + " | Дата: " + nne + "                |");
+        System.out.println("|                                  ***********   Спасибо за покупки!  *********                                       |");
         System.out.println("*-------------------------------------------------------------------------------------------------------------------*\n");
     }
 }
