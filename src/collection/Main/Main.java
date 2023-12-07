@@ -88,7 +88,7 @@ public class Main {
                 int action = scanner.nextInt();
                 switch (action) {
                     case 1 -> {
-                        DataBase.libraries = library.saveLibrary(DataBase.libraries);
+                        library.saveLibrary(DataBase.libraries);
                     }
                     case 2 -> {
                         System.out.println(library.getAllLibraries());
@@ -242,16 +242,15 @@ public class Main {
                                         case 1 -> {
                                             System.out.println("Write full name: ");
                                             reader1.setFullName(new Scanner(System.in).nextLine());
-                                            reader.updateReader(ddd, reader1);
                                         }
                                         case 2 -> {
                                             System.out.println("Write Phone number: ");
                                             reader1.setPhoneNumber(new Scanner(System.in).nextLine());
-                                            reader.updateReader(ddd, reader1);
+
                                         }
                                         case 3 ->{
                                             System.out.println("Write email:");
-                                            reader1.setPhoneNumber(new Scanner(System.in).nextLine());
+
                                         }case 4->{
                                             while (true) {
                                                 System.out.println("Write gender: (M||F)");

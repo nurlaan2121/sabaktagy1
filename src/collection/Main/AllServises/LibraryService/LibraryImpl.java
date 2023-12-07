@@ -8,10 +8,11 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class LibraryImpl implements LibraryInterface {
-    Library library = new Library();
+
 
     @Override
     public ArrayList<Library> saveLibrary(ArrayList<Library> libraries) {
+        Library library = new Library();
         Scanner scanner = new Scanner(System.in);
         while (true) {
             System.out.println("Write name: ");
